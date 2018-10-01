@@ -14,7 +14,7 @@
     <body>
         <div style="margin-left: 20px; margin-top: 30px; margin-bottom: 15px">
             <h4>
-                Input Card Application Toolkit Command <br><br>
+                Input Card Application Toolkit Command<br>
             </h4>
         </div>
         <div style="margin-left: 20px; margin-top: 15px">
@@ -25,7 +25,8 @@
             <table id = "result_table">
             </table>
         </div>
-        <script src="usat.js"></script>
+
+        <script src="../cat/usat.js"></script>
         <script>
             document.getElementById("input_command").addEventListener("keypress", function(event) {
                 if (event.keyCode == 13) {
@@ -34,6 +35,9 @@
             })
             document.getElementById("button_ok").addEventListener("click", function() {
                 var input = document.getElementById("input_command").value
+                if (input == '') {
+                    return
+                }
 
                 try {
                     var cat = new Cat()
